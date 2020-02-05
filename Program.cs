@@ -15,6 +15,16 @@ namespace CoreEscuela
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
             Printer.Beep(10000, cantidad:10);
             ImpimirCursosEscuela(engine.Escuela);
+
+            Printer.DrawLine(20);
+            Printer.DrawLine(20);
+            Printer.DrawLine(20);
+            Printer.WriteTitle("Pruebas de Polimorfismo");
+
+            var alumnoTest = new Alumno { Nombre = "Luis Enrique" };
+            ObjetoEscuelaBase ob = alumnoTest;
+
+
             ReadLine();
         }
 
