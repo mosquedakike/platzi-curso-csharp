@@ -15,14 +15,14 @@ namespace CoreEscuela
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
             Printer.Beep(10000, cantidad:10);
             ImpimirCursosEscuela(engine.Escuela);
+            ReadLine();
         }
 
         private static void ImpimirCursosEscuela(Escuela escuela)
         {
             
             Printer.WriteTitle("Cursos de la Escuela");
-            
-            
+
             if (escuela?.Cursos != null)
             {
                 foreach (var curso in escuela.Cursos)
