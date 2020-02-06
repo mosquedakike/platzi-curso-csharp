@@ -24,6 +24,23 @@ namespace CoreEscuela
             var alumnoTest = new Alumno { Nombre = "Luis Enrique" };
             ObjetoEscuelaBase ob = alumnoTest;
 
+            Printer.WriteTitle("Alumno");
+            WriteLine($"Alumno: {alumnoTest.Nombre}");
+            WriteLine($"UniqueId: {alumnoTest.UniqueId}");
+            WriteLine($"GetType: {alumnoTest.GetType()}");
+
+            Printer.WriteTitle("ObjetoEscuela");
+            WriteLine($"Alumno: {ob.Nombre}");
+            WriteLine($"UniqueId: {ob.UniqueId}");
+            WriteLine($"GetType: {ob.GetType()}");
+
+            var obtDummy = new ObjetoEscuelaBase() {Nombre="Juan" };
+            
+            Printer.WriteTitle("obtDummy");
+            WriteLine($"Alumno: {obtDummy.Nombre}");
+            WriteLine($"UniqueId: {obtDummy.UniqueId}");
+            WriteLine($"GetType: {obtDummy.GetType()}");
+            
 
             ReadLine();
         }
