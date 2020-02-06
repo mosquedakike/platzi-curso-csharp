@@ -28,7 +28,7 @@ namespace CoreEscuela
 
         private void CargarEvaluaciones()
         {
-            var lista = new List<Evaluación>();
+            var lista = new List<Evaluacion>();
             foreach (var curso in Escuela.Cursos)
             {
                 foreach (var asigatura in curso.Asignaturas)
@@ -38,7 +38,7 @@ namespace CoreEscuela
                         var rnd = new Random(System.Environment.TickCount);
                         for (int i = 0; i < 5; i++)
                         {
-                            var ev = new Evaluación
+                            var ev = new Evaluacion
                             {
                                 Asignatura = asigatura,
                                 Nombre = $"{asigatura.Nombre} Ev#{1 + 1}",

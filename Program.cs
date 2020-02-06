@@ -13,7 +13,7 @@ namespace CoreEscuela
             var engine = new EscuelaEngine();
             engine.Inicializar();
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
-            Printer.Beep(10000, cantidad:10);
+            //Printer.Beep(10000, cantidad:10);
             ImpimirCursosEscuela(engine.Escuela);
 
             Printer.DrawLine(20);
