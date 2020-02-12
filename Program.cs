@@ -24,23 +24,50 @@ namespace CoreEscuela
             var alumnoTest = new Alumno { Nombre = "Luis Enrique" };
             ObjetoEscuelaBase ob = alumnoTest;
 
-            Printer.WriteTitle("Alumno");
+            WriteLine("\n[ob = alumnoTest]\n");
+
+            Printer.WriteTitle("Objeto-padre [alumnoTest]");
             WriteLine($"Alumno: {alumnoTest.Nombre}");
             WriteLine($"UniqueId: {alumnoTest.UniqueId}");
             WriteLine($"GetType: {alumnoTest.GetType()}");
+            WriteLine($"Evaluaciones: {alumnoTest.Evaluaciones}");
 
-            Printer.WriteTitle("ObjetoEscuela");
+
+            Printer.WriteTitle("Objeto-hijo [ob]");
             WriteLine($"Alumno: {ob.Nombre}");
             WriteLine($"UniqueId: {ob.UniqueId}");
             WriteLine($"GetType: {ob.GetType()}");
+            WriteLine($"Evaluaciones: Este objeto no puede acceder a esta propiedad");
 
-            var obtDummy = new ObjetoEscuelaBase() {Nombre="Juan" };
-            
-            Printer.WriteTitle("obtDummy");
+            var obtDummy = new ObjetoEscuelaBase() { Nombre = "Juanca" };
+
+            Printer.WriteTitle("Objeto-ObjetoEscuelaBase [obtDummy]");
             WriteLine($"Alumno: {obtDummy.Nombre}");
             WriteLine($"UniqueId: {obtDummy.UniqueId}");
             WriteLine($"GetType: {obtDummy.GetType()}");
-            
+
+            //alumnoTest = (Alumno)obtDummy;
+            var evaluacion = new Evaluacion()
+            {
+               Nombre = "Parcial #1",
+               Nota = 4.5f
+            };
+
+            WriteLine($"Nombre: {evaluacion.Nombre}, Nota: {evaluacion.Nota}");
+
+            ob = evaluacion;
+
+            if (ob is Alumno)
+            {
+                Alumno AlumnoRecuperado = (Alumno)ob;
+                WriteLine(AlumnoRecuperado);
+            }
+
+            Alumno AlumnoRecuperado2 = ob as Alumno;
+            if (AlumnoRecuperado2 != null)
+            {
+                WriteLine("Excelente");
+            }
 
             ReadLine();
         }
