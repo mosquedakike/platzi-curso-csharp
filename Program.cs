@@ -40,7 +40,20 @@ namespace CoreEscuela
             WriteLine($"Alumno: {obtDummy.Nombre}");
             WriteLine($"UniqueId: {obtDummy.UniqueId}");
             WriteLine($"GetType: {obtDummy.GetType()}");
-            
+
+            var evaluacion = new Evaluacion() {Nombre="kike", Nota=4.5f };
+            Printer.WriteTitle("Evaluación");
+            WriteLine($"evaluacion: {evaluacion.Nombre}");
+            WriteLine($"evaluacion: {evaluacion.UniqueId}");
+            WriteLine($"evaluacion: {evaluacion.Nota}");
+            WriteLine($"evaluacion: {evaluacion.GetType()}");
+
+            ob = evaluacion;
+            Printer.WriteTitle("ob");
+            WriteLine($"Alumno: {ob.Nombre}");
+            WriteLine($"Alumno: {ob.UniqueId}");
+            WriteLine($"Alumno: {ob.GetType()}");
+
 
             ReadLine();
         }
